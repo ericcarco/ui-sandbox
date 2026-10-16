@@ -1,0 +1,36 @@
+.epg { --epg-gap: 20px; --epg-radius: 20px; --epg-card-height: 420px; --epg-surface: #fff; --epg-text: #202321; --epg-muted: #666c67; --epg-accent: #285b42; width: 100%; color: var(--epg-text); }
+.epg *, .epg *::before, .epg *::after { box-sizing: border-box; }
+.epg__grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--epg-gap); padding: 0; margin: 0; list-style: none; }
+.epg__cell { grid-column: span 2; min-width: 0; height: var(--epg-card-height); }
+.epg__cell:nth-child(4n + 1), .epg__cell:nth-child(4n + 4) { grid-column: span 3; }
+.epg__trigger { display: block; width: 100%; height: 100%; text-align: left; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; border-radius: var(--epg-radius); }
+.epg__trigger:focus-visible { outline: 3px solid var(--epg-accent); outline-offset: 5px; }
+.epg__card, .epg__placeholder { width: 100%; height: 100%; border-radius: var(--epg-radius); background: #e2e4df; }
+.epg__card { position: relative; overflow: hidden; isolation: isolate; }
+.epg__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.epg__card--light { color: #fff; }
+.epg__card--dark { color: #18221f; }
+.epg__card-copy { position: absolute; inset: 28px 28px auto; max-width: 340px; }
+.epg__eyebrow { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; font-weight: 650; }
+.epg__card-copy h3, .epg__card-copy h2 { color: inherit; font-size: clamp(25px, 3vw, 34px); line-height: 1.08; letter-spacing: -.045em; margin: 12px 0; font-weight: 600; text-wrap: balance; }
+.epg__meta { font-size: 12px; opacity: .8; }
+.epg__open-label { position: absolute; bottom: 24px; left: 28px; right: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 550; }
+.epg__open-label span { font-size: 23px; transition: transform .2s; }
+.epg__trigger:hover .epg__open-label span { transform: translate(3px, -3px); }
+.epg__dialog { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 32px 20px; border: 0; background: transparent; overflow: auto; color: var(--epg-text); font: inherit; overscroll-behavior: contain; }
+.epg__dialog::backdrop { background: transparent; }
+.epg__backdrop { position: fixed; inset: 0; background: rgb(14 23 19 / .76); backdrop-filter: blur(8px); }
+.epg__detail { position: relative; width: min(100%, 760px); margin: 0 auto; background: var(--epg-surface); border-radius: var(--epg-radius); overflow: hidden; box-shadow: 0 24px 100px #0004; }
+.epg__hero { position: relative; height: var(--epg-card-height); overflow: hidden; }
+.epg__body { padding: clamp(24px, 5vw, 48px); color: var(--epg-text); font-size: 16px; line-height: 1.75; }
+.epg__body h3 { font-size: 21px; line-height: 1.3; letter-spacing: -.025em; margin: 32px 0 12px; }
+.epg__body p { margin: 0 0 20px; }
+.epg__body a { color: var(--epg-accent); text-underline-offset: 4px; }
+.epg__intro { font-size: 22px; line-height: 1.5; letter-spacing: -.025em; }
+.epg__close { position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #ffffff80; border-radius: 50%; background: #fffffff0; color: #18221f; cursor: pointer; font-size: 28px; line-height: 1; }
+.epg__back { margin-top: 16px; border: 1px solid #d7dcd7; border-radius: 100px; background: var(--epg-surface); padding: 12px 20px; color: var(--epg-text); cursor: pointer; font: inherit; font-size: 13px; }
+.epg__close:focus-visible, .epg__back:focus-visible, .epg__body a:focus-visible { outline: 3px solid var(--epg-accent); outline-offset: 4px; }
+.epg__empty { padding: 40px; border: 1px dashed #b9c1bb; border-radius: var(--epg-radius); text-align: center; color: var(--epg-muted); }
+@media (max-width: 800px) { .epg { --epg-card-height: 340px; --epg-gap: 14px; } .epg__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .epg__cell, .epg__cell:nth-child(n) { grid-column: span 1; } .epg__card-copy { inset: 24px 22px auto; } }
+@media (max-width: 520px) { .epg { --epg-card-height: 380px; --epg-gap: 16px; } .epg__grid { grid-template-columns: minmax(0, 1fr); } .epg__dialog { padding: 12px; } .epg__card-copy { max-width: 260px; } .epg__detail .epg__card-copy { right: 60px; } }
+@media (prefers-reduced-motion: reduce) { .epg *, .epg *::before, .epg *::after { scroll-behavior: auto !important; transition: none !important; } }
