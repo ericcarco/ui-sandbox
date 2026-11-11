@@ -1,0 +1,3 @@
+# Impeccable engine binary (platform-specific; the launcher re-downloads it)
+.claude/skills/impeccable/scripts/bin/
+.claude/settings.local.json
