@@ -25,7 +25,7 @@ STORY: LinkedIn will not hand connections to apps, so you ask for your own copy;
 
 FIRST VIEWPORT: Brand and "Finish later"; the four-lamp setup rail with "Your contacts" current; serif title and lede; left, one panel holding the three steps with the LinkedIn button in step 1; right, the dark dusk panel explaining why, then the phone note.
 
-FORM: Given by the artboard (single column of steps plus aside); no structure roll was run. seed: none (not rolled; form fixed by the supplied comp).
+FORM: Given by the artboard (single column of steps plus aside); the dealt structures were set aside because the supplied artboard fixes the form. seed:1e34a62525845cdf
 
 Signature interaction: after the user opens LinkedIn and returns to the tab, step 1's lamp lights and step 2 becomes current.
 

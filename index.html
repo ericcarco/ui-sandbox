@@ -45,7 +45,7 @@
       <div class="setup-two">
         <section class="box path-box" aria-label="Steps on LinkedIn">
           <ol class="stepl path">
-            <li class="now" id="step-open">
+            <li class="now" id="step-open" aria-current="step">
               <span class="num" aria-hidden="true">1</span>
               <div class="step-body">
                 <h2>Open LinkedIn's "Download your data" page</h2>
@@ -54,7 +54,7 @@
                   <li><span class="tag fill">Me</span></li>
                   <li><span class="tag fill">Settings &amp; Privacy</span></li>
                   <li><span class="tag fill">Data privacy</span></li>
-                  <li><span class="tag warm">Download your data</span></li>
+                  <li><span class="tag pick">Download your data</span></li>
                 </ol>
                 <div class="row wrap open-row">
                   <a class="btn solid" id="open-linkedin" href="https://www.linkedin.com/mypreferences/d/download-my-data" target="_blank" rel="noopener">
@@ -102,6 +102,7 @@
 
         <aside class="col side" aria-label="About this step">
           <section class="dusk col">
+            <svg class="shield" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
             <h2>Why this way?</h2>
             <p class="sm">LinkedIn only lets approved partners read connections through its API. Your own export is the official route. You choose what to share, and you can delete it from Anyone I Know at any time.</p>
             <ul class="why">
@@ -124,7 +125,7 @@
       <span class="xs muted">Step 2 of 4</span>
       <div class="row wrap foot-next">
         <a class="link-btn" href="contacts.html">I already have the file</a>
-        <a class="btn solid" href="waiting.html">I've requested it
+        <a class="btn" id="requested" href="waiting.html">I've requested it
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>

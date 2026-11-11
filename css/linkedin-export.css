@@ -1,7 +1,7 @@
 /* Ask LinkedIn for your connections.
    Page layer on top of ds/aik (tokens.css + components/bundle.css). Every value reads the system's tokens. */
 
-html{scrollbar-color:var(--hair) var(--bg)}
+html{scrollbar-color:var(--hair) var(--bg);scroll-padding-bottom:96px}
 body{caret-color:var(--accent-ink)}
 .shell{padding:0 20px}
 
@@ -27,13 +27,19 @@ body{caret-color:var(--accent-ink)}
 .facts svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .setup-two{margin:26px 0 18px}
 
-/* The three steps: one lit path. The step you are on is the lamp that is lit. */
+/* The three steps: one lit path. The step you are on is the lamp that is lit; a string joins the lamps and
+   fills as each step is done, the way the setup rail's does. */
 .path-box{padding:0}
-.path{padding:6px 26px}
-.path>li{gap:18px;padding:24px 0}
+.path{padding:10px 26px}
+.path>li{position:relative;gap:18px;padding:22px 0;border-top:0}
+.path>li:not(:last-child)::after{content:"";position:absolute;left:15px;top:62px;bottom:-16px;width:2px;border-radius:2px;
+  background:linear-gradient(var(--accent),var(--accent)) top/100% 0% no-repeat,var(--hair);transition:background-size var(--dur-3) var(--ease)}
+.path>li.done:not(:last-child)::after{background-size:100% 100%}
 .path .num{width:32px;height:32px;font-size:13.5px;font-variant-numeric:tabular-nums;transition:background-color var(--dur-3) var(--ease),box-shadow var(--dur-3) var(--ease),color var(--dur-3) var(--ease)}
 .path .now .num{background:var(--lit-face);color:var(--lit-ink);animation:breathe 3.2s ease-in-out infinite}
-.path .done .num{background:var(--accent);color:var(--lit-ink);box-shadow:var(--glow)}
+.path .done+.now .num{transition-delay:var(--dur-2);animation-delay:var(--dur-2)}
+.path .done .num{background:var(--accent);color:var(--lit-ink)}
+.path .done .num svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;animation:pop var(--dur-2) var(--ease)}
 .step-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px}
 .step-body h2{font-size:21px;text-wrap:balance;padding-top:2px}
 .step-body p{margin:0;color:var(--ink2);max-width:62ch;text-wrap:pretty}
@@ -46,7 +52,6 @@ body{caret-color:var(--accent-ink)}
 .crumbs li{display:flex;align-items:center;gap:0;padding:0;border:0}
 .crumbs li+li::before{content:"";width:6px;height:6px;margin:0 11px 0 7px;border-top:1.5px solid var(--ink2);border-right:1.5px solid var(--ink2);transform:rotate(45deg);opacity:.7}
 .crumbs .tag{padding:6px 10px;font-size:12.5px}
-.crumbs .tag.warm{margin:0 0 0 2px}
 .open-row{gap:10px 14px;margin-top:4px}
 
 /* A drawing of LinkedIn's form, not a control */
@@ -59,12 +64,14 @@ body{caret-color:var(--accent-ink)}
 .opt.on::before{box-shadow:inset 0 0 0 4.5px var(--primary)}
 .files{display:flex;flex-wrap:wrap;gap:6px;padding-left:24px}
 .files .tag{padding:5px 9px}
-.files .tag.pick{background:var(--hold-bg);color:var(--hold-ink);box-shadow:inset 0 0 0 1.3px var(--accent)}
-.files .tag.pick svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+/* The thing to pick, in the system's hold colours; glow stays with the lamps */
+.tag.pick{background:var(--hold-bg);color:var(--hold-ink);box-shadow:inset 0 0 0 1.3px var(--accent)}
+.tag.pick svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .mock-btn{align-self:flex-start;margin-left:24px;padding:7px 13px;border-radius:var(--r-btn);background:var(--ink);color:var(--surface);font-weight:600;font-size:12.5px;line-height:1.2}
 
 /* Aside */
 .side{gap:14px}
+.dusk .shield{width:24px;height:24px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .dusk h2{font-size:22px}
 .dusk p{margin:0;line-height:1.5}
 .why{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:13.5px}
@@ -79,14 +86,24 @@ body{caret-color:var(--accent-ink)}
 .setup-foot{position:sticky;bottom:0;z-index:var(--z-top);background:var(--bg);padding:16px 20px;margin:24px -20px -16px}
 .foot-next{gap:8px 18px}
 
+@media (max-width:820px){.setup-aside{margin-left:auto}}
 @media (max-width:640px){
   .shell{padding:0 var(--space-gutter-phone)}
+  .setup-top .brand span{display:inline}
   .rail .stop{width:auto;min-width:22px}
-  .rail-box{margin-bottom:22px}
-  .path{padding:2px 16px}
-  .path>li{gap:12px;padding:20px 0}
+  .rail .stop{position:relative}
+  .rail .now .lbl{display:flex;white-space:nowrap;position:absolute;top:29px;left:50%;transform:translateX(-50%)}
+  .rail-box{margin-bottom:22px;padding-bottom:40px}
+  /* On a phone the way out comes first: these steps are easiest on a computer */
+  .side{display:contents}
+  .phone{order:-1}
+  .path{padding:6px 16px}
+  .path>li{gap:12px;padding:18px 0}
+  .path>li:not(:last-child)::after{left:13px;top:54px;bottom:-12px}
   .path .num{width:28px;height:28px}
-  .foot-next{flex:1 1 100%;justify-content:space-between}
   .setup-foot{position:static;padding:16px 0 0;margin:24px 0 0}
+  .foot-next{display:contents}
+  .foot-next .link-btn{margin-left:auto}
+  .foot-next .btn{flex:1 1 100%;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){.path .now .num{animation:none;box-shadow:var(--glow)}}
