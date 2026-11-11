@@ -1,5 +1,5 @@
 /* Ask LinkedIn for your connections.
-   Page layer on top of ds/aik (tokens.css + components/bundle.css). Every value reads the system's tokens. */
+   Page layer on top of ds/aik (tokens.css + components/bundle.css). Colours, radii, shadows and timing read the system's tokens. */
 
 html{scrollbar-color:var(--hair) var(--bg);scroll-padding-bottom:96px}
 body{caret-color:var(--accent-ink)}
@@ -87,9 +87,9 @@ body{caret-color:var(--accent-ink)}
 .foot-next{gap:8px 18px}
 
 @media (max-width:820px){.setup-aside{margin-left:auto}}
+@media (max-width:700px){.setup-top .brand span{display:inline}}
 @media (max-width:640px){
   .shell{padding:0 var(--space-gutter-phone)}
-  .setup-top .brand span{display:inline}
   .rail .stop{width:auto;min-width:22px}
   .rail .stop{position:relative}
   .rail .now .lbl{display:flex;white-space:nowrap;position:absolute;top:29px;left:50%;transform:translateX(-50%)}

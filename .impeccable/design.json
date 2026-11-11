@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T06:17:41Z",
+  "title": "Design System: Anyone I Know",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Porch Navy",
+        "canonical": "#24336a",
+        "cssVar": "--primary",
+        "tonalRamp": [
+          "oklch(15% 0.048 269)",
+          "oklch(27% 0.063 269)",
+          "oklch(38% 0.077 269)",
+          "oklch(50% 0.091 269)",
+          "oklch(62% 0.089 269)",
+          "oklch(74% 0.074 269)",
+          "oklch(85% 0.060 269)",
+          "oklch(95% 0.048 269)"
+        ]
+      },
+      "accent": {
+        "role": "secondary",
+        "displayName": "Lamp Amber",
+        "canonical": "#eba43c",
+        "cssVar": "--accent",
+        "tonalRamp": [
+          "oklch(15% 0.070 73)",
+          "oklch(27% 0.092 73)",
+          "oklch(38% 0.111 73)",
+          "oklch(50% 0.133 73)",
+          "oklch(62% 0.130 73)",
+          "oklch(74% 0.108 73)",
+          "oklch(85% 0.088 73)",
+          "oklch(95% 0.070 73)"
+        ]
+      },
+      "lit-face": {
+        "role": "secondary",
+        "displayName": "Lamp Face",
+        "canonical": "#f6c46e",
+        "cssVar": "--lit-face",
+        "tonalRamp": [
+          "oklch(15% 0.058 80)",
+          "oklch(27% 0.076 80)",
+          "oklch(38% 0.093 80)",
+          "oklch(50% 0.111 80)",
+          "oklch(62% 0.108 80)",
+          "oklch(74% 0.090 80)",
+          "oklch(85% 0.073 80)",
+          "oklch(95% 0.058 80)"
+        ]
+      },
+      "accent-ink": {
+        "role": "secondary",
+        "displayName": "Amber Ink",
+        "canonical": "#835405",
+        "cssVar": "--accent-ink",
+        "tonalRamp": [
+          "oklch(15% 0.050 71)",
+          "oklch(27% 0.066 71)",
+          "oklch(38% 0.080 71)",
+          "oklch(50% 0.096 71)",
+          "oklch(62% 0.093 71)",
+          "oklch(74% 0.078 71)",
+          "oklch(85% 0.063 71)",
+          "oklch(95% 0.050 71)"
+        ]
+      },
+      "hold-bg": {
+        "role": "secondary",
+        "displayName": "Held Amber",
+        "canonical": "#fbe6c0",
+        "cssVar": "--hold-bg",
+        "tonalRamp": [
+          "oklch(15% 0.027 82)",
+          "oklch(27% 0.035 82)",
+          "oklch(38% 0.043 82)",
+          "oklch(50% 0.051 82)",
+          "oklch(62% 0.050 82)",
+          "oklch(74% 0.041 82)",
+          "oklch(85% 0.034 82)",
+          "oklch(95% 0.027 82)"
+        ]
+      },
+      "hold-ink": {
+        "role": "secondary",
+        "displayName": "Held Ink",
+        "canonical": "#6e4604",
+        "cssVar": "--hold-ink",
+        "tonalRamp": [
+          "oklch(15% 0.044 72)",
+          "oklch(27% 0.058 72)",
+          "oklch(38% 0.071 72)",
+          "oklch(50% 0.085 72)",
+          "oklch(62% 0.082 72)",
+          "oklch(74% 0.068 72)",
+          "oklch(85% 0.056 72)",
+          "oklch(95% 0.044 72)"
+        ]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Porch Paper",
+        "canonical": "#f3eee5",
+        "cssVar": "--bg",
+        "tonalRamp": [
+          "oklch(15% 0.006 82)",
+          "oklch(27% 0.008 82)",
+          "oklch(38% 0.010 82)",
+          "oklch(50% 0.012 82)",
+          "oklch(62% 0.012 82)",
+          "oklch(74% 0.010 82)",
+          "oklch(85% 0.008 82)",
+          "oklch(95% 0.006 82)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Cream Card",
+        "canonical": "#fcfaf5",
+        "cssVar": "--surface",
+        "tonalRamp": [
+          "oklch(15% 0.003 89)",
+          "oklch(27% 0.004 89)",
+          "oklch(38% 0.005 89)",
+          "oklch(50% 0.006 89)",
+          "oklch(62% 0.006 89)",
+          "oklch(74% 0.005 89)",
+          "oklch(85% 0.004 89)",
+          "oklch(95% 0.003 89)"
+        ]
+      },
+      "surface2": {
+        "role": "neutral",
+        "displayName": "White Leaf",
+        "canonical": "#ffffff",
+        "cssVar": "--surface2",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(27% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(50% 0.000 90)",
+          "oklch(62% 0.000 90)",
+          "oklch(74% 0.000 90)",
+          "oklch(85% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "sunk": {
+        "role": "neutral",
+        "displayName": "Sunk Paper",
+        "canonical": "#eee7da",
+        "cssVar": "--sunk",
+        "tonalRamp": [
+          "oklch(15% 0.009 83)",
+          "oklch(27% 0.012 83)",
+          "oklch(38% 0.015 83)",
+          "oklch(50% 0.018 83)",
+          "oklch(62% 0.017 83)",
+          "oklch(74% 0.014 83)",
+          "oklch(85% 0.012 83)",
+          "oklch(95% 0.009 83)"
+        ]
+      },
+      "btn-bg": {
+        "role": "neutral",
+        "displayName": "Button Paper",
+        "canonical": "#ece6da",
+        "cssVar": "--btn-bg",
+        "tonalRamp": [
+          "oklch(15% 0.008 85)",
+          "oklch(27% 0.011 85)",
+          "oklch(38% 0.014 85)",
+          "oklch(50% 0.016 85)",
+          "oklch(62% 0.016 85)",
+          "oklch(74% 0.013 85)",
+          "oklch(85% 0.011 85)",
+          "oklch(95% 0.008 85)"
+        ]
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e4dbcc",
+        "cssVar": "--hair",
+        "tonalRamp": [
+          "oklch(15% 0.011 81)",
+          "oklch(27% 0.014 81)",
+          "oklch(38% 0.018 81)",
+          "oklch(50% 0.021 81)",
+          "oklch(62% 0.020 81)",
+          "oklch(74% 0.017 81)",
+          "oklch(85% 0.014 81)",
+          "oklch(95% 0.011 81)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Navy Ink",
+        "canonical": "#1b2340",
+        "cssVar": "--ink",
+        "tonalRamp": [
+          "oklch(15% 0.027 271)",
+          "oklch(27% 0.036 271)",
+          "oklch(38% 0.043 271)",
+          "oklch(50% 0.052 271)",
+          "oklch(62% 0.051 271)",
+          "oklch(74% 0.042 271)",
+          "oklch(85% 0.034 271)",
+          "oklch(95% 0.027 271)"
+        ]
+      },
+      "ink2": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#4e5572",
+        "cssVar": "--ink2",
+        "tonalRamp": [
+          "oklch(15% 0.024 274)",
+          "oklch(27% 0.031 274)",
+          "oklch(38% 0.038 274)",
+          "oklch(50% 0.045 274)",
+          "oklch(62% 0.044 274)",
+          "oklch(74% 0.037 274)",
+          "oklch(85% 0.030 274)",
+          "oklch(95% 0.024 274)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "setup-title": {
+        "displayName": "Setup title",
+        "purpose": "The one page title on a setup screen."
+      },
+      "card-title": {
+        "displayName": "Card title",
+        "purpose": "Heading of a panel such as the dusk panel."
+      },
+      "step-title": {
+        "displayName": "Step title",
+        "purpose": "Heading of each step in a step path."
+      },
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "The wordmark beside the lamp dot."
+      },
+      "column-head": {
+        "displayName": "Column head",
+        "purpose": "Heading of a small side note."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Paragraph under the title, in ink2, max 64ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Step paragraphs and general copy, max 62ch."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Control labels inside setup; base buttons elsewhere are 13px."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Panel copy, in ink2."
+      },
+      "hint": {
+        "displayName": "Hint",
+        "purpose": "Captions, hints and rail labels."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Tags; 700 when filled."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Step numbers and inline file names, tabular numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow",
+        "value": "0 1px 1px rgba(27,35,64,.05),0 12px 30px -16px rgba(27,35,64,.28)",
+        "purpose": "Every resting panel."
+      },
+      {
+        "name": "lift",
+        "value": "0 1px 1px rgba(27,35,64,.06),0 22px 40px -18px rgba(27,35,64,.4)",
+        "purpose": "The dusk panel and anything floating above the page."
+      },
+      {
+        "name": "btn-primary-shadow",
+        "value": "0 6px 14px -8px rgba(36,51,106,.8)",
+        "purpose": "Under the solid button only."
+      },
+      {
+        "name": "glow",
+        "value": "0 0 0 2px #fcfaf5,0 0 0 3.5px #eba43c,0 0 16px 5px rgba(235,164,60,.55)",
+        "purpose": "A lit lamp: cream gap, amber ring, amber haze. State, not elevation."
+      },
+      {
+        "name": "focus",
+        "value": "0 0 0 2px #fcfaf5,0 0 0 4px #24336A,0 0 0 8px rgba(235,164,60,.35)",
+        "purpose": "Keyboard focus ring on every focusable element."
+      }
+    ],
+    "motion": [
+      {
+        "name": "dur-1",
+        "value": "280ms",
+        "purpose": "Control state changes (hover, press, skip link)."
+      },
+      {
+        "name": "dur-2",
+        "value": "420ms",
+        "purpose": "Small entrances such as the tick popping in; the delay before the next lamp lights."
+      },
+      {
+        "name": "dur-3",
+        "value": "700ms",
+        "purpose": "Light: lamps and strings filling; the screen settling in."
+      },
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "The one long ease-out used for every transition."
+      },
+      {
+        "name": "enter-y",
+        "value": "6px",
+        "purpose": "Distance a screen rises as it mounts."
+      },
+      {
+        "name": "breathe",
+        "value": "3.2s ease-in-out infinite",
+        "purpose": "The current lamp. Replaced by a steady glow under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "setup-stack",
+        "value": "820px",
+        "purpose": "Two-column setup body becomes one column (token --bp-setup)."
+      },
+      {
+        "name": "setup-phone",
+        "value": "640px",
+        "purpose": "Rail spreads and keeps only the current label; foot stops sticking; gutter drops to 12px. Applied as a literal; no token."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Default pill button: a quiet action such as Back.",
+      "html": "<button class=\"ds-btn\">Back</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:7px;min-height:44px;border:0;border-radius:var(--r-btn);padding:7px 18px;font:600 14px/1.2 var(--font-body);background:var(--btn-bg);color:var(--btn-ink);cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color var(--dur-1) var(--ease),color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease),transform var(--dur-1) var(--ease),filter var(--dur-1) var(--ease)} .ds-btn:hover{filter:brightness(.96)} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus{outline:none} .ds-btn:focus-visible{box-shadow:var(--focus)} .ds-btn svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "The single next action in view.",
+      "html": "<button class=\"ds-btn ds-btn-solid\">Open LinkedIn download page <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5\"/></svg></button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:7px;min-height:44px;border:0;border-radius:var(--r-btn);padding:7px 18px;font:600 14px/1.2 var(--font-body);background:var(--btn-bg);color:var(--btn-ink);cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color var(--dur-1) var(--ease),color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease),transform var(--dur-1) var(--ease),filter var(--dur-1) var(--ease)} .ds-btn:hover{filter:brightness(.96)} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus{outline:none} .ds-btn:focus-visible{box-shadow:var(--focus)} .ds-btn svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round} .ds-btn-solid{background:var(--primary);color:var(--on-primary);box-shadow:var(--btn-primary-shadow)} .ds-btn-solid:hover{filter:brightness(1.12)} .ds-btn-solid:focus-visible{box-shadow:var(--focus)}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action inside a panel, or a solid button after its job is done.",
+      "html": "<button class=\"ds-btn ds-btn-ghost\">Email me these steps</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:7px;min-height:44px;border:0;border-radius:var(--r-btn);padding:7px 18px;font:600 14px/1.2 var(--font-body);background:var(--btn-bg);color:var(--btn-ink);cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color var(--dur-1) var(--ease),color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease),transform var(--dur-1) var(--ease),filter var(--dur-1) var(--ease)} .ds-btn:hover{filter:brightness(.96)} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus{outline:none} .ds-btn:focus-visible{box-shadow:var(--focus)} .ds-btn svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round} .ds-btn-ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--hair)} .ds-btn-ghost:focus-visible{box-shadow:var(--focus)}"
+    },
+    {
+      "name": "Link Button",
+      "kind": "custom",
+      "description": "Underlined way out, such as Finish later.",
+      "html": "<a class=\"ds-link-btn\" href=\"#\">Finish later</a>",
+      "css": ".ds-link-btn{display:inline-flex;align-items:center;min-height:44px;font:400 13px/1.45 var(--font-body);color:var(--ink2);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent);text-underline-offset:3px;border-radius:4px} .ds-link-btn:hover{color:var(--ink)} .ds-link-btn:focus{outline:none} .ds-link-btn:focus-visible{box-shadow:var(--focus)}"
+    },
+    {
+      "name": "Tags",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Small facts and names: outline, fill, faint, and pick (the one to choose).",
+      "html": "<span class=\"ds-tags\"><span class=\"ds-tag\">Outline</span><span class=\"ds-tag ds-tag-fill\">Data privacy</span><span class=\"ds-tag ds-tag-faint\">Messages</span><span class=\"ds-tag ds-tag-pick\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M2.5 6.5l2.2 2.2L9.5 3.8\"/></svg>Connections</span></span>",
+      "css": ".ds-tags{display:flex;flex-wrap:wrap;gap:6px} .ds-tag{display:inline-flex;align-items:center;gap:5px;font:600 11.5px/1 var(--font-body);border-radius:var(--r-sm);padding:4px 9px;white-space:nowrap;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.3px var(--hair)} .ds-tag-fill{background:var(--sunk);box-shadow:none;font-weight:700} .ds-tag-faint{color:var(--ink2)} .ds-tag-pick{background:var(--hold-bg);color:var(--hold-ink);box-shadow:inset 0 0 0 1.3px var(--accent)} .ds-tag svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Box",
+      "kind": "card",
+      "refersTo": "box",
+      "description": "Resting panel: cream paper, soft navy shadow, no border.",
+      "html": "<section class=\"ds-box\"><h2>On your phone right now?</h2><p>The export is easiest on a computer. Send yourself these steps with the direct link.</p></section>",
+      "css": ".ds-box{background:var(--surface);color:var(--ink);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;max-width:400px} .ds-box h2{margin:0;font:500 17px/1.25 var(--font-display)} .ds-box p{margin:0;font:400 13px/1.5 var(--font-body);color:var(--ink2)}"
+    },
+    {
+      "name": "Dusk Panel",
+      "kind": "card",
+      "refersTo": "dusk",
+      "description": "The screen's one dark surface, for the reason behind a step.",
+      "html": "<section class=\"ds-dusk\"><h2>Why this way?</h2><p>Your own export is the official route. You choose what to share.</p><ul><li><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M2.5 6.5l2.2 2.2L9.5 3.8\"/></svg>Names, companies and titles only</li><li><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M2.5 6.5l2.2 2.2L9.5 3.8\"/></svg>No messages, no password</li></ul></section>",
+      "css": ".ds-dusk{background:var(--ink);color:var(--bg);border-radius:calc(var(--r) + 4px);padding:24px;box-shadow:var(--lift);display:flex;flex-direction:column;gap:12px;max-width:400px} .ds-dusk h2{margin:0;font:500 22px/1.2 var(--font-display);letter-spacing:-.015em} .ds-dusk p{margin:0;font:400 13px/1.5 var(--font-body);color:color-mix(in srgb,var(--bg) 78%,var(--ink))} .ds-dusk ul{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;font:400 13.5px/1.45 var(--font-body)} .ds-dusk li{display:flex;align-items:center;gap:10px} .ds-dusk svg{flex:none;width:14px;height:14px;fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Setup Rail",
+      "kind": "nav",
+      "description": "Progress as string lights: done lamps lit, the current lamp breathing, strings filling between them.",
+      "html": "<ol class=\"ds-rail\"><li><span class=\"ds-rail-stop\"><span class=\"ds-lamp ds-lamp-done\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M2.5 6.5l2.2 2.2L9.5 3.8\"/></svg></span>Your role</span><span class=\"ds-rail-sep ds-rail-sep-lit\"></span></li><li><span class=\"ds-rail-stop ds-rail-now\"><span class=\"ds-lamp ds-lamp-now\"></span>Your contacts</span><span class=\"ds-rail-sep\"></span></li><li><span class=\"ds-rail-stop\"><span class=\"ds-lamp\"></span>More people</span></li></ol>",
+      "css": ".ds-rail{list-style:none;margin:0;padding:22px 16px;display:flex;align-items:flex-start;background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow)} .ds-rail li{display:flex;align-items:flex-start} .ds-rail-stop{display:flex;flex-direction:column;align-items:center;gap:8px;width:104px;padding:2px 0;font:400 12.5px/1.2 var(--font-body);color:var(--ink2);text-align:center} .ds-rail-now{color:var(--ink);font-weight:700} .ds-lamp{width:17px;height:17px;border-radius:50%;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--hair);display:grid;place-items:center} .ds-lamp svg{width:11px;height:11px;fill:none;stroke:var(--lit-ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round} .ds-lamp-done{background:var(--accent);box-shadow:var(--glow)} .ds-lamp-now{background:var(--lit-face);animation:ds-breathe 3.2s ease-in-out infinite} .ds-rail-sep{width:34px;height:2px;margin:10px -24px 0;background:var(--hair);border-radius:2px;flex:none} .ds-rail-sep-lit{background:var(--accent)} @keyframes ds-breathe{0%,100%{box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 35%,transparent),0 0 10px 3px color-mix(in srgb,var(--accent) 30%,transparent)}50%{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 55%,transparent),0 0 26px 10px color-mix(in srgb,var(--accent) 62%,transparent)}} @media (prefers-reduced-motion:reduce){.ds-lamp-now{animation:none;box-shadow:var(--glow)}}"
+    },
+    {
+      "name": "Step Path",
+      "kind": "custom",
+      "refersTo": "step-lamp",
+      "description": "Signature pattern: instructions as one lit path. Done lamp, filled string, breathing current lamp, unlit next.",
+      "html": "<ol class=\"ds-path\"><li class=\"ds-path-done\"><span class=\"ds-num\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M2.5 6.5l2.2 2.2L9.5 3.8\"/></svg></span><div><h2>Open the download page</h2><p>Opened in another tab.</p></div></li><li class=\"ds-path-now\"><span class=\"ds-num\">2</span><div><h2>Pick \"Connections\" only</h2><p>Then request the archive.</p></div></li><li><span class=\"ds-num\">3</span><div><h2>Watch your email</h2><p>The link usually arrives within minutes.</p></div></li></ol>",
+      "css": ".ds-path{list-style:none;margin:0;padding:10px 26px;background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);max-width:520px} .ds-path>li{position:relative;display:flex;gap:18px;padding:22px 0} .ds-path>li:not(:last-child)::after{content:'';position:absolute;left:15px;top:62px;bottom:-16px;width:2px;border-radius:2px;background:var(--hair)} .ds-path>li.ds-path-done:not(:last-child)::after{background:var(--accent)} .ds-num{flex:none;width:32px;height:32px;border-radius:50%;background:var(--sunk);display:grid;place-items:center;font:600 13.5px var(--font-mono);font-variant-numeric:tabular-nums;color:var(--ink2)} .ds-path-now .ds-num{background:var(--lit-face);color:var(--lit-ink);animation:ds-breathe 3.2s ease-in-out infinite} .ds-path-done .ds-num{background:var(--accent);color:var(--lit-ink)} .ds-num svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round} .ds-path h2{margin:0;padding-top:2px;font:500 21px/1.2 var(--font-display);letter-spacing:-.015em;color:var(--ink)} .ds-path p{margin:12px 0 0;font:400 14.5px/1.45 var(--font-body);color:var(--ink2)} @keyframes ds-breathe{0%,100%{box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 35%,transparent),0 0 10px 3px color-mix(in srgb,var(--accent) 30%,transparent)}50%{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 55%,transparent),0 0 26px 10px color-mix(in srgb,var(--accent) 62%,transparent)}} @media (prefers-reduced-motion:reduce){.ds-path-now .ds-num{animation:none;box-shadow:var(--glow)}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Porch Light",
+    "overview": "The system is a porch in the early evening. Pages are warm paper, the writing is navy ink, and the only bright thing is lamplight: amber dots that glow where something is lit. A lamp is lit for a step that is done, the lamp of the step you are on breathes, and a string between lamps fills as you go. Everything else stays quiet so the light can say where you are.\n\nSurfaces are soft. Panels are cream paper lifted off the page by a low navy shadow, with no drawn outline; controls are pills; headings are set in a book serif at a calm medium weight over a highly legible sans for everything you read or press. Density is comfortable, not sparse: 14.5px body, 44px controls, panels padded 14 to 24px.\n\nThis record covers Porch Light as shipped on the setup step \"Ask LinkedIn for your connections\". The source in `ds/aik/` also carries four other themes (Night, Index, Switchboard, Classic) that swap colours, radii, faces and timing through the same tokens. They are not shipped here and are not recorded; their devices do not belong on a Porch Light screen.",
+    "keyCharacteristics": [
+      "Warm paper page, cream panels, navy ink; amber appears only as light.",
+      "Lamps carry state: unlit, breathing (current), lit (done), joined by a string that fills.",
+      "Panels have shadow and no stroke; controls and tags are full pills.",
+      "Newsreader for headings at weight 500, Atkinson Hyperlegible Next for body and controls, Atkinson Hyperlegible Mono for numerals and file names.",
+      "One solid navy button per view; one dark dusk panel per screen.",
+      "Slow, settling motion (280 / 420 / 700ms on a long ease-out) that collapses under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Lamplight Rule",
+        "body": "Bright amber (`accent`, `lit-face`) is light, not ink. It fills lamps, strings, rings and icon strokes. Amber words on paper use `hold-ink` or `accent-ink`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tokens Only Rule",
+        "body": "Component rules read semantic tokens (`--bg`, `--ink`, `--accent`), never raw hex and never the primitive scale (`--paper-100`, `--amber-400`). That is what lets one stylesheet serve every theme.",
+        "section": "colors"
+      },
+      {
+        "name": "The Level Voice Rule",
+        "body": "Serif headings stay at weight 500 with -0.015em tracking, sentence case. No bold serif, no uppercase, no tracking-out.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Faces Rule",
+        "body": "Serif is for headings and the brand only. Anything pressed, scanned or measured (buttons, tags, labels, numbers) is the sans or the mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Stroke Rule",
+        "body": "In Porch Light the border width token is 0 and the line colour is clear. A surface gets its edge from shadow and tone. Hairlines exist only as dividers between rows and as inset rings on tags and ghost buttons.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Lit Means Lit Rule",
+        "body": "Glow marks state (a lamp that is done or current). It is never a hover effect, a card decoration or a substitute for elevation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** read semantic tokens from `ds/aik/tokens.css` for every colour, shadow and radius, and build on the classes in `ds/aik/components/bundle.css` before adding page rules.",
+      "**Do** show progress with lamps: unlit, breathing for current, lit for done, with a string that fills between them.",
+      "**Do** keep exactly one solid navy button in view, and move it when the next action changes (after the user returns from LinkedIn, the opened link becomes a ghost and \"I've requested it\" becomes solid).",
+      "**Do** give every control inside setup a 44px minimum height and the focus ring from the `--focus` token.",
+      "**Do** draw icons as inline SVG outlines in the current colour with round caps and joins.",
+      "**Do** hold line lengths: 21ch for the title, 64ch for the lede, 62ch for step copy.",
+      "**Do** replace a breathing lamp with a steady glow under `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** draw a stroke around a panel. Porch Light surfaces have shadow and tone, no border.",
+      "**Don't** set text in bright amber on paper. Use `hold-ink` or `accent-ink` for amber words.",
+      "**Don't** use glow for hover, emphasis or decoration. Glow means a lamp is lit.",
+      "**Don't** put a second dusk panel on a screen.",
+      "**Don't** bold, uppercase or letter-space the serif.",
+      "**Don't** make a drawing of another product's interface look operable: no hover states, no focus stops, no real form controls.",
+      "**Don't** bring the other themes' devices into Porch Light: hard offset shadows, drawn borders, uppercase mono tags and square corners belong to Index, Switchboard and Classic."
+    ]
+  }
+}
