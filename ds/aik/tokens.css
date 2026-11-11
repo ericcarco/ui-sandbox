@@ -1,0 +1,290 @@
+/* Anyone I Know — generated from tokens.json */
+:root, [data-theme="porch"] {
+  --paper-0: #ffffff;
+  --paper-50: #fcfaf5;
+  --paper-100: #f3eee5;
+  --paper-150: #eee7da;
+  --paper-200: #ece6da;
+  --paper-300: #e4dbcc;
+  --cream-100: #f1eadb;
+  --cream-200: #e9e1cf;
+  --stone-400: #b8b4aa;
+  --navy-900: #1b2340;
+  --navy-700: #24336a;
+  --slate-600: #4e5572;
+  --periwinkle-300: #9db2f2;
+  --night-950: #121829;
+  --night-900: #161d31;
+  --night-850: #1a2238;
+  --night-800: #202a44;
+  --night-700: #283252;
+  --night-600: #2c3654;
+  --amber-100: #fbe6c0;
+  --amber-200: #f5cd86;
+  --amber-300: #f6c46e;
+  --amber-350: #f2b24f;
+  --amber-400: #eba43c;
+  --amber-800: #835405;
+  --amber-850: #6e4604;
+  --amber-950: #3b2f18;
+  --green-100: #dcead9;
+  --green-300: #a6d9ae;
+  --green-800: #2a5634;
+  --green-950: #1f3628;
+  --clay-100: #f4e2dc;
+  --clay-300: #f2afa2;
+  --clay-800: #853628;
+  --clay-950: #3a2326;
+  --clear: #00000000;
+  --bg: var(--paper-100);
+  --surface: var(--paper-50);
+  --surface2: var(--paper-0);
+  --sunk: var(--paper-150);
+  --ink: var(--navy-900);
+  --ink2: var(--slate-600);
+  --hair: var(--paper-300);
+  --line: var(--clear);
+  --primary: var(--navy-700);
+  --on-primary: var(--paper-50);
+  --btn-bg: var(--paper-200);
+  --btn-ink: var(--navy-900);
+  --accent: var(--amber-400);
+  --accent-ink: var(--amber-800);
+  --lit-face: var(--amber-300);
+  --lit-ink: var(--navy-900);
+  --hold-bg: var(--amber-100);
+  --hold-ink: var(--amber-850);
+  --ok-bg: var(--green-100);
+  --ok-ink: var(--green-800);
+  --int-bg: var(--green-100);
+  --int-ink: var(--green-800);
+  --rej-bg: var(--clay-100);
+  --rej-ink: var(--clay-800);
+  --ring: var(--navy-700);
+  --scrim: rgba(27,35,64,.32);
+  --shadow: 0 1px 1px rgba(27,35,64,.05),0 12px 30px -16px rgba(27,35,64,.28);
+  --shadow-soft: 0 1px 1px rgba(27,35,64,.05),0 6px 18px -12px rgba(27,35,64,.25);
+  --lift: 0 1px 1px rgba(27,35,64,.06),0 22px 40px -18px rgba(27,35,64,.4);
+  --btn-primary-shadow: 0 6px 14px -8px rgba(36,51,106,.8);
+  --glow: 0 0 0 2px #fcfaf5,0 0 0 3.5px #eba43c,0 0 16px 5px rgba(235,164,60,.55);
+  --focus: 0 0 0 2px #fcfaf5,0 0 0 4px #24336A,0 0 0 8px rgba(235,164,60,.35);
+}
+[data-theme="night"] {
+  --bg: var(--night-950);
+  --surface: var(--night-850);
+  --surface2: var(--night-800);
+  --sunk: var(--night-900);
+  --ink: var(--cream-100);
+  --ink2: var(--stone-400);
+  --hair: var(--night-600);
+  --line: var(--clear);
+  --primary: var(--cream-200);
+  --on-primary: var(--night-950);
+  --btn-bg: var(--night-700);
+  --btn-ink: var(--cream-100);
+  --accent: var(--amber-350);
+  --accent-ink: var(--amber-350);
+  --lit-face: var(--amber-300);
+  --lit-ink: var(--navy-900);
+  --hold-bg: var(--amber-950);
+  --hold-ink: var(--amber-200);
+  --ok-bg: var(--green-950);
+  --ok-ink: var(--green-300);
+  --int-bg: var(--green-950);
+  --int-ink: var(--green-300);
+  --rej-bg: var(--clay-950);
+  --rej-ink: var(--clay-300);
+  --ring: var(--periwinkle-300);
+  --scrim: rgba(5,8,16,.55);
+  --shadow: inset 0 1px 0 rgba(255,255,255,.035),0 14px 30px -18px rgba(0,0,0,.75);
+  --shadow-soft: inset 0 1px 0 rgba(255,255,255,.035),0 8px 18px -12px rgba(0,0,0,.6);
+  --lift: inset 0 1px 0 rgba(255,255,255,.05),0 24px 44px -18px rgba(0,0,0,.85);
+  --btn-primary-shadow: none;
+  --glow: 0 0 0 2px #1a2238,0 0 0 3.5px #F2B24F,0 0 26px 9px rgba(242,178,79,.6);
+  --focus: 0 0 0 2px #1a2238,0 0 0 4px #9DB2F2,0 0 0 8px rgba(242,178,79,.25);
+}
+[data-theme="index"] {
+  --bg: #e8e5dd;
+  --surface: #f6f4ee;
+  --surface2: #ffffff;
+  --sunk: #dfdbd1;
+  --ink: #1c1b19;
+  --ink2: #58544e;
+  --hair: #cbc5b9;
+  --line: #1c1b19;
+  --primary: #1c1b19;
+  --on-primary: #f6f4ee;
+  --btn-bg: #f6f4ee;
+  --btn-ink: #1c1b19;
+  --accent: #eb5a12;
+  --accent-ink: #a23f08;
+  --lit-face: #f6f4ee;
+  --lit-ink: #1c1b19;
+  --hold-bg: #f6d77a;
+  --hold-ink: #1c1b19;
+  --ok-bg: #2f6b43;
+  --ok-ink: #f6f4ee;
+  --int-bg: #1c1b19;
+  --int-ink: #f6f4ee;
+  --rej-bg: #f6f4ee;
+  --rej-ink: #58544e;
+  --ring: #eb5a12;
+  --scrim: rgba(28,27,25,.38);
+  --shadow: 0 2px 0 #1C1B19;
+  --shadow-soft: 0 2px 0 #1C1B19;
+  --lift: 4px 4px 0 #1C1B19;
+  --btn-primary-shadow: 0 2px 0 #eb5a12;
+  --glow: 0 0 0 2px #f6f4ee,0 0 0 4.5px #EB5A12;
+  --focus: 0 0 0 2px #f6f4ee,0 0 0 4px #1C1B19,0 0 0 6px #EB5A12;
+}
+[data-theme="switch"] {
+  --bg: #0f1317;
+  --surface: #161b21;
+  --surface2: #1d242c;
+  --sunk: #12171c;
+  --ink: #e7ecef;
+  --ink2: #a3aeb9;
+  --hair: #2a333d;
+  --line: #2a333d;
+  --primary: #e7ecef;
+  --on-primary: #0f1317;
+  --btn-bg: #1d242c;
+  --btn-ink: #e7ecef;
+  --accent: #4cd38a;
+  --accent-ink: #5edf9c;
+  --lit-face: #12301f;
+  --lit-ink: #5edf9c;
+  --hold-bg: #3a2e14;
+  --hold-ink: #f2c35b;
+  --ok-bg: #123423;
+  --ok-ink: #6be3a2;
+  --int-bg: #1a2a4a;
+  --int-ink: #a7c2ff;
+  --rej-bg: #161b21;
+  --rej-ink: #8e99a5;
+  --ring: #4cd38a;
+  --scrim: rgba(0,0,0,.55);
+  --shadow: inset 0 1px 0 rgba(255,255,255,.045);
+  --shadow-soft: inset 0 1px 0 rgba(255,255,255,.045);
+  --lift: inset 0 1px 0 rgba(255,255,255,.06),0 0 0 1px #4A5868,0 20px 40px -20px #000;
+  --btn-primary-shadow: none;
+  --glow: 0 0 0 2px #161b21,0 0 0 3.5px #4CD38A,0 0 12px 3px rgba(76,211,138,.55);
+  --focus: 0 0 0 1px #4CD38A,0 0 0 4px rgba(76,211,138,.28);
+}
+[data-theme="classic"] {
+  --bg: #e8e6e1;
+  --surface: #f4f3f0;
+  --surface2: #ffffff;
+  --sunk: #e2e0da;
+  --ink: #2a2a2a;
+  --ink2: #5f5d58;
+  --hair: #c9c6bf;
+  --line: #2a2a2a;
+  --primary: #2a2a2a;
+  --on-primary: #f4f3f0;
+  --btn-bg: #f4f3f0;
+  --btn-ink: #2a2a2a;
+  --accent: #f26b1d;
+  --accent-ink: #a3410a;
+  --lit-face: #2a2a2a;
+  --lit-ink: #f4f3f0;
+  --hold-bg: #fff4ec;
+  --hold-ink: #2a2a2a;
+  --ok-bg: #eef6ef;
+  --ok-ink: #2f6b3e;
+  --int-bg: #2a2a2a;
+  --int-ink: #f4f3f0;
+  --rej-bg: #f4f3f0;
+  --rej-ink: #5f5d58;
+  --ring: #f26b1d;
+  --scrim: rgba(0,0,0,.4);
+  --shadow: none;
+  --shadow-soft: none;
+  --lift: 0 8px 24px rgba(0,0,0,.18);
+  --btn-primary-shadow: none;
+  --glow: 0 0 0 3px #F26B1D;
+  --focus: 0 0 0 2px #f4f3f0,0 0 0 4px #2A2A2A;
+}
+:root {
+  --space-tight: 6px;
+  --space-row: 10px;
+  --space-card-y: 14px;
+  --space-card-x: 16px;
+  --space-gutter: 20px;
+  --space-gutter-phone: 12px;
+  --space-modal: 22px;
+  --space-setup: 24px;
+  --space-split: 26px;
+  --space-section: 30px;
+  --r: 16px;
+  --r-sm: 999px;
+  --r-btn: 999px;
+  --r-in: 10px;
+  --bw: 0px;
+  --dur-1: 280ms;
+  --dur-2: 420ms;
+  --dur-3: 700ms;
+  --stagger: 40ms;
+  --enter-y: 6px;
+  --ease: cubic-bezier(.16,1,.3,1);
+  --ease-exit: cubic-bezier(.4,0,.6,1);
+  --app-max: 1180px;
+  --split-side: 340px;
+  --bp-stack: 900px;
+  --bp-setup: 820px;
+  --bp-phone: 700px;
+  --z-top: 20;
+  --z-feedback: 30;
+  --z-menu: 40;
+  --z-modal: 50;
+  --z-toast: 100;
+  --font-display: 'Newsreader Variable', Georgia, serif;
+  --font-body: 'Atkinson Hyperlegible Next Variable', system-ui, sans-serif;
+  --font-mono: 'Atkinson Hyperlegible Mono Variable', ui-monospace, monospace;
+  --font-index-display: 'Bricolage Grotesque Variable', sans-serif;
+  --font-index-body: 'Geist Variable', sans-serif;
+  --font-index-mono: 'Geist Mono Variable', ui-monospace, monospace;
+  --font-switch-display: 'Archivo Variable', sans-serif;
+  --font-switch-body: 'Instrument Sans Variable', sans-serif;
+  --font-switch-mono: 'Fragment Mono', ui-monospace, monospace;
+  --font-classic-sans: -apple-system, Inter, Helvetica, sans-serif;
+  --font-classic-mono: ui-monospace, Menlo, monospace;
+}
+.type-page-title { font-family: var(--font-display); font-size: 38px; line-height: 1.08; font-weight: 500; letter-spacing: -0.015em; }
+.type-setup-title { font-family: var(--font-display); font-size: 46px; line-height: 1.08; font-weight: 500; letter-spacing: -0.015em; }
+.type-card-title { font-family: var(--font-display); font-size: 22px; line-height: 1.2; font-weight: 500; letter-spacing: -0.015em; }
+.type-section-label { font-family: var(--font-display); font-size: 21px; line-height: 1.25; font-weight: 500; letter-spacing: -0.015em; }
+.type-column-head { font-family: var(--font-display); font-size: 17px; line-height: 1.25; font-weight: 500; }
+.type-tracker-card-title { font-family: var(--font-display); font-size: 16px; line-height: 1.2; font-weight: 600; }
+.type-eyebrow { font-family: var(--font-display); font-size: 16px; line-height: 1.3; font-weight: 400; font-style: italic; }
+.type-tile-number { font-family: var(--font-display); font-size: 30px; line-height: 1.05; font-weight: 500; }
+.type-dusk-number { font-family: var(--font-display); font-size: 56px; line-height: 1; font-weight: 500; font-style: italic; }
+.type-lede { font-family: var(--font-body); font-size: 15.5px; line-height: 1.45; font-weight: 400; }
+.type-row-title { font-family: var(--font-body); font-size: 15px; line-height: 1.3; font-weight: 650; }
+.type-body { font-family: var(--font-body); font-size: 14.5px; line-height: 1.45; font-weight: 400; }
+.type-tab { font-family: var(--font-body); font-size: 14px; line-height: 1.2; font-weight: 600; }
+.type-button { font-family: var(--font-body); font-size: 13px; line-height: 1.2; font-weight: 600; }
+.type-small { font-family: var(--font-body); font-size: 13px; line-height: 1.45; font-weight: 400; }
+.type-hint { font-family: var(--font-body); font-size: 12.5px; line-height: 1.45; font-weight: 400; }
+.type-extra-small { font-family: var(--font-body); font-size: 12px; line-height: 1.45; font-weight: 400; }
+.type-tag { font-family: var(--font-body); font-size: 11.5px; line-height: 1; font-weight: 600; }
+.type-table-header { font-family: var(--font-mono); font-size: 11px; line-height: 1.4; font-weight: 600; letter-spacing: 0.06em; }
+.type-badge { font-family: var(--font-mono); font-size: 11px; line-height: 1; font-weight: 700; }
+.type-number { font-family: var(--font-mono); font-size: 13px; line-height: 1.45; font-weight: 400; }
+.type-index-page-title { font-family: var(--font-index-display); font-size: 38px; line-height: 1.08; font-weight: 760; letter-spacing: -0.035em; }
+.type-index-body { font-family: var(--font-index-body); font-size: 14px; line-height: 1.45; font-weight: 400; }
+.type-index-tag { font-family: var(--font-index-mono); font-size: 10.5px; line-height: 1; font-weight: 500; letter-spacing: 0.05em; }
+.type-switch-page-title { font-family: var(--font-switch-display); font-size: 28px; line-height: 1.08; font-weight: 800; letter-spacing: -0.01em; }
+.type-switch-body { font-family: var(--font-switch-body); font-size: 14px; line-height: 1.45; font-weight: 400; }
+.type-switch-label { font-family: var(--font-switch-mono); font-size: 12px; line-height: 1.4; font-weight: 400; letter-spacing: 0.12em; }
+@font-face { font-family: 'Newsreader Variable'; src: url('fonts/newsreader-latin-opsz-normal.woff2') format('woff2'); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Newsreader Variable'; src: url('fonts/newsreader-latin-opsz-italic.woff2') format('woff2'); font-weight: 200 800; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next Variable'; src: url('fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2') format('woff2'); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Next Variable'; src: url('fonts/atkinson-hyperlegible-next-latin-wght-italic.woff2') format('woff2'); font-weight: 200 800; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible Mono Variable'; src: url('fonts/atkinson-hyperlegible-mono-latin-wght-normal.woff2') format('woff2'); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Bricolage Grotesque Variable'; src: url('fonts/bricolage-grotesque-latin-opsz-normal.woff2') format('woff2'); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Geist Variable'; src: url('fonts/geist-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Geist Mono Variable'; src: url('fonts/geist-mono-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Archivo Variable'; src: url('fonts/archivo-latin-wdth-normal.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Instrument Sans Variable'; src: url('fonts/instrument-sans-latin-wght-normal.woff2') format('woff2'); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Fragment Mono'; src: url('fonts/fragment-mono-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }

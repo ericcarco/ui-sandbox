@@ -1,0 +1,432 @@
+/* Anyone I Know — component styles (aik.css, from src/styles.css, unchanged below the look knobs).
+   Colors, shadows, Porch radii, timing and fonts come from tokens.css (tokens.json). This file keeps only what
+   tokens.json has no per-theme slot for: radii, border width, faces, display tuning and timing for Index,
+   Switchboard and Classic. Every component rule reads tokens. */
+
+/* ================= LOOK KNOBS ================= */
+:root{color-scheme:light;
+  --f-display:var(--font-display);--f-body:var(--font-body);--f-mono:var(--font-mono);
+  --d-wght:500;--d-track:-.015em;--d-stretch:normal;--d-case:none;--body-size:14.5px}
+html[data-theme=night]{color-scheme:dark}
+html[data-theme=index]{color-scheme:light;
+  --r:7px;--r-sm:5px;--r-btn:5px;--r-in:5px;--bw:1.5px;
+  --f-display:var(--font-index-display);--f-body:var(--font-index-body);--f-mono:var(--font-index-mono);
+  --d-wght:760;--d-track:-.035em;--d-stretch:normal;--d-case:none;--body-size:14px;
+  --dur-1:120ms;--dur-2:180ms;--dur-3:240ms;--ease:cubic-bezier(.2,.9,.25,1);--ease-exit:cubic-bezier(.55,0,.9,.4);--stagger:25ms;--enter-y:0px;}
+html[data-theme=switch]{color-scheme:dark;
+  --r:5px;--r-sm:4px;--r-btn:4px;--r-in:4px;--bw:1px;
+  --f-display:var(--font-switch-display);--f-body:var(--font-switch-body);--f-mono:var(--font-switch-mono);
+  --d-wght:800;--d-track:-.01em;--d-stretch:118%;--d-case:uppercase;--body-size:14px;
+  --dur-1:80ms;--dur-2:120ms;--dur-3:160ms;--ease:cubic-bezier(.3,0,0,1);--ease-exit:cubic-bezier(.3,0,0,1);--stagger:15ms;--enter-y:0px;}
+html[data-theme=classic]{color-scheme:light;
+  --r:9px;--r-sm:10px;--r-btn:7px;--r-in:7px;--bw:1.5px;
+  --f-display:var(--font-classic-sans);--f-body:var(--font-classic-sans);--f-mono:var(--font-classic-mono);
+  --d-wght:700;--d-track:-.02em;--d-stretch:normal;--d-case:none;--body-size:15px;
+  --dur-1:200ms;--dur-2:300ms;--dur-3:450ms;--ease:cubic-bezier(.2,.6,.3,1);--ease-exit:cubic-bezier(.4,0,1,1);--stagger:30ms;--enter-y:4px;}
+
+/* Names older inline styles still use */
+html{--paper:var(--bg);--card:var(--surface);--mid:var(--ink2);--faint:var(--hair);--pin:var(--accent-ink);--ok:var(--ok-ink)}
+
+/* ================= BASE ================= */
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+/* Keep room for the scrollbar, so the layout doesn't jump sideways when a page grows tall enough to scroll. */
+html{scrollbar-gutter:stable}
+body{font-family:var(--f-body);font-size:var(--body-size);line-height:1.45;-webkit-font-smoothing:antialiased;transition:background-color var(--dur-2) var(--ease),color var(--dur-2) var(--ease)}
+a{color:inherit;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent);text-underline-offset:3px}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus{outline:none}
+:focus-visible{box-shadow:var(--focus)!important;outline:none}
+::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
+.app{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+h1,h2{font-family:var(--f-display);font-weight:var(--d-wght);letter-spacing:var(--d-track);font-stretch:var(--d-stretch);text-transform:var(--d-case)}
+h1{font-size:38px;line-height:1.08;margin:10px 0 6px}
+h2{font-size:22px;line-height:1.2;margin:0}
+html[data-theme=switch] h1{font-size:28px}
+html[data-theme=switch] h2{font-size:16px;letter-spacing:.02em}
+html[data-theme=classic] h1{font-size:30px}
+html[data-theme=classic] h2{font-size:20px}
+/* Section labels: the human voice in Porch, a label in the others */
+h3{font:500 21px/1.25 var(--f-display);letter-spacing:var(--d-track);color:var(--ink);margin:30px 0 12px}
+html[data-theme=index] h3{font:var(--d-wght) 18px/1.25 var(--f-display);letter-spacing:-.02em}
+html[data-theme=switch] h3,html[data-theme=classic] h3{font:500 12px/1.4 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:26px 0 10px}
+.muted{color:var(--ink2)}.sm{font-size:13px}.xs{font-size:12px}
+.row{display:flex;gap:10px;align-items:center}.wrap{flex-wrap:wrap}.col{display:flex;flex-direction:column;gap:10px}.grow{flex:1;min-width:0}
+code,kbd{font-family:var(--f-mono)}
+
+/* ================= TOP BAR ================= */
+.banner{background:var(--sunk);color:var(--ink2);font-size:12.5px;padding:6px 20px;text-align:center;border-bottom:1px solid var(--hair)}
+html[data-theme=classic] .banner{background:var(--ink);color:var(--surface);border:0}
+/* In-page links (/settings#targets from the map's funnel, Start here's buttons) land below the sticky nav, not under it. */
+[id]{scroll-margin-top:84px}
+.top{display:flex;align-items:center;gap:6px;padding:14px 0;position:sticky;top:0;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:20;border-bottom:1px solid var(--hair);margin-bottom:22px;flex-wrap:wrap}
+html[data-theme=classic] .top{background:var(--bg);border-bottom-width:1.5px;margin-bottom:18px}
+.brand{font:var(--d-wght) 19px/1 var(--f-display);letter-spacing:var(--d-track);font-stretch:var(--d-stretch);margin-right:14px;display:flex;align-items:center;gap:10px;text-decoration:none;white-space:nowrap}
+html[data-theme=switch] .brand{text-transform:uppercase;font-size:13px;letter-spacing:.04em}
+html[data-theme=classic] .brand{font:700 15px/1 var(--f-body);gap:8px}
+.brand i{width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--bg),0 0 12px 3px color-mix(in srgb,var(--accent) 55%,transparent);flex:none}
+html[data-theme=index] .brand i{background:var(--ink);box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--accent)}
+html[data-theme=classic] .brand i{background:var(--ink);box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--accent)}
+.tab{padding:6px 12px;border-radius:var(--r-btn);text-decoration:none;font-weight:600;font-size:14px;border:var(--bw) solid transparent;color:var(--ink2);display:inline-flex;align-items:center;transition:background-color var(--dur-1) var(--ease),color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease)}
+.tab:hover{color:var(--ink)}
+button.tab{background:none;cursor:pointer;line-height:inherit}
+.tab.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-soft)}
+html[data-theme=index] .tab.on{background:var(--ink);color:var(--surface);box-shadow:none}
+html[data-theme=switch] .tab.on{background:var(--surface2);color:var(--accent-ink);box-shadow:inset 0 0 0 1px var(--hair)}
+html[data-theme=classic] .tab{color:var(--ink);border-radius:20px}
+html[data-theme=classic] .tab.on{border-color:var(--ink);background:var(--surface);box-shadow:none}
+.tab .n{font:700 11px/1 var(--f-mono);margin-left:6px;background:var(--accent);color:#1C1B19;border-radius:999px;padding:3px 6px;min-width:19px;text-align:center}
+html[data-theme=classic] .tab .n{font-weight:600;padding:2px 6px}
+.top .right{margin-left:auto;display:flex;gap:8px;align-items:center;position:relative}
+.narrow{display:none!important}
+.menu{position:absolute;right:0;top:calc(100% + 8px);background:var(--surface);border:var(--bw) solid var(--line);border-radius:calc(var(--r) - 4px);padding:6px;display:flex;flex-direction:column;gap:2px;min-width:190px;box-shadow:var(--lift);z-index:40;transform-origin:top right;animation:pop var(--dur-2) var(--ease)}
+.menu .tab{border-radius:calc(var(--r-in) - 2px);text-align:left;background:none;cursor:pointer;display:block;box-shadow:none;color:var(--ink)}
+.menu .tab:hover,.menu .tab.on{background:var(--sunk);color:var(--ink)}
+
+/* ================= SURFACES ================= */
+.box{background:var(--surface);border:var(--bw) solid var(--line);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow)}
+.soft{border:1.5px dashed var(--hair);border-radius:var(--r);padding:12px 14px}
+.item{display:flex;gap:12px;align-items:center;background:var(--surface);border:var(--bw) solid var(--line);border-radius:var(--r);padding:13px 18px;margin-bottom:10px;box-shadow:var(--shadow);transition:box-shadow var(--dur-2) var(--ease),background-color var(--dur-2) var(--ease)}
+/* Text first; when the row is too narrow for both, the buttons wrap onto their own row instead of squeezing the text. */
+.item{flex-wrap:wrap}.item .txt{flex:1 1 260px;min-width:0;overflow-wrap:anywhere}.item b{display:block;font-weight:650;font-size:15px}
+html[data-theme=classic] .item{padding:10px 14px;margin-bottom:8px;border-radius:9px}
+html[data-theme=classic] .item b{font-weight:700}
+.item .acts{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end;flex:0 1 auto}
+.warn{background:var(--hold-bg);color:var(--hold-ink);border-radius:calc(var(--r) - 4px);padding:10px 14px;font-size:13px;border:var(--bw) solid var(--line)}
+html[data-theme=classic] .warn{border-color:var(--accent);color:var(--ink)}
+.warn a{color:inherit}
+.empty{border:1.5px dashed var(--hair);border-radius:calc(var(--r) - 4px);height:56px}
+.hint{font-size:12.5px;color:var(--ink2)}
+.kbdhint{font:12px var(--f-mono);color:var(--ink2)}
+
+/* ================= BUTTONS, TAGS, CHIPS ================= */
+.btn{display:inline-flex;align-items:center;gap:7px;border:var(--bw) solid var(--ink);border-radius:var(--r-btn);padding:7px 14px;font-size:13px;font-weight:600;line-height:1.2;background:var(--btn-bg);color:var(--btn-ink);cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color var(--dur-1) var(--ease),color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease),transform var(--dur-1) var(--ease),filter var(--dur-1) var(--ease)}
+.btn:hover{filter:brightness(.96)}
+.btn:active{transform:translateY(1px)}
+html[data-theme=switch] .btn{border-color:var(--hair);font-weight:500;padding:6px 11px}
+html[data-theme=switch] .btn:hover{filter:none;border-color:#4A5868}
+html[data-theme=classic] .btn{padding:6px 12px;background:var(--surface)}
+html[data-theme=classic] .btn:hover{filter:none;background:#fff}
+.btn.solid{background:var(--primary);color:var(--on-primary);border-color:var(--primary);box-shadow:var(--btn-primary-shadow)}
+.btn.solid:hover{filter:brightness(1.12)}
+html[data-theme=night] .btn.solid:hover,html[data-theme=switch] .btn.solid:hover{filter:brightness(.92)}
+html[data-theme=switch] .btn.solid{font-weight:600}
+html[data-theme=classic] .btn.solid{background:var(--ink);color:var(--surface)}
+html[data-theme=classic] .btn.solid:hover{background:#000;filter:none}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--hair);border-color:transparent}
+html[data-theme=index] .btn.ghost{box-shadow:none;border-color:var(--ink)}
+html[data-theme=switch] .btn.ghost{box-shadow:none;border-color:var(--hair)}
+html[data-theme=classic] .btn.ghost{box-shadow:none;border-color:var(--hair)}
+.btn.sm{padding:5px 11px;font-size:12.5px}
+html[data-theme=classic] .btn.sm{padding:3px 9px;font-size:12px}
+.btn:disabled{opacity:.45;cursor:default;filter:none;transform:none}
+.btn kbd{font:500 10px/1 var(--f-mono);border:1px solid currentColor;border-radius:3px;padding:2px 3px;opacity:.6}
+.btn.danger{color:var(--rej-ink);box-shadow:inset 0 0 0 1.5px currentColor;background:transparent;border-color:transparent}
+html[data-theme=index] .btn.danger,html[data-theme=classic] .btn.danger{box-shadow:none;border-color:currentColor}
+.btn.solid.danger{background:var(--rej-ink);color:var(--surface);box-shadow:none;border-color:var(--rej-ink)}
+html[data-theme=index] .btn.solid.danger{color:var(--surface)}
+/* Tags: small facts on a row. warm is a lit face (someone who'd help); fill is emphasis (pay, furthest stage); pin is the accent; faint recedes. */
+.tag{display:inline-flex;align-items:center;gap:5px;font:600 11.5px/1 var(--f-body);border-radius:var(--r-sm);padding:4px 9px;white-space:nowrap;vertical-align:1px;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.3px var(--hair)}
+.tag.fill{background:var(--sunk);box-shadow:none;font-weight:700}
+.tag.warm{background:var(--lit-face);color:var(--lit-ink);box-shadow:var(--glow);margin:0 3px}
+.tag.pin{color:var(--accent-ink);box-shadow:inset 0 0 0 1.3px currentColor}
+.tag.faint{color:var(--ink2)}
+html[data-theme=porch] .tag.warm::before,html[data-theme=night] .tag.warm::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent-ink)}
+html[data-theme=index] .tag,html[data-theme=switch] .tag{font:500 10.5px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.05em;padding:4px 6px}
+html[data-theme=index] .tag{box-shadow:inset 0 0 0 1.3px var(--ink)}
+html[data-theme=index] .tag.fill{background:var(--ink);color:var(--surface)}
+html[data-theme=index] .tag.warm{background:var(--accent);color:var(--ink);box-shadow:inset 0 0 0 1.3px var(--ink)}
+html[data-theme=index] .tag.pin{box-shadow:inset 0 0 0 1.3px var(--accent-ink)}
+html[data-theme=index] .tag.faint{box-shadow:inset 0 0 0 1.3px var(--hair)}
+html[data-theme=switch] .tag.warm{box-shadow:inset 0 0 0 1px #24553A;margin:0}
+html[data-theme=classic] .tag{font:600 11px/1.35 var(--f-body);box-shadow:none;border:1.2px solid var(--ink);padding:0 7px}
+html[data-theme=classic] .tag.fill,html[data-theme=classic] .tag.warm{background:var(--ink);color:var(--surface);margin:0}
+html[data-theme=classic] .tag.pin{border-color:var(--accent);color:var(--accent-ink)}
+html[data-theme=classic] .tag.faint{border-color:var(--hair);color:var(--ink2)}
+.chip{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:var(--r-btn);padding:6px 13px;font-size:13px;font-weight:500;cursor:pointer;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--hair);white-space:nowrap;transition:background-color var(--dur-2) var(--ease),color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+.chip:hover{box-shadow:inset 0 0 0 1.5px var(--ink2)}
+html[data-theme=index] .chip{box-shadow:inset 0 0 0 1.5px var(--ink)}
+html[data-theme=switch] .chip{box-shadow:inset 0 0 0 1px var(--hair);background:var(--surface2)}
+html[data-theme=classic] .chip{box-shadow:inset 0 0 0 1.3px var(--ink);padding:3px 11px;border-radius:14px}
+html[data-theme] .chip.on{background:var(--primary);color:var(--on-primary);box-shadow:inset 0 0 0 1.5px var(--primary)}
+/* a level that's usual for the field picked in the targets form (LAB-184): marked, not picked; outlines don't move layout */
+html[data-theme] .chip.sug{outline:1.5px dashed var(--ink2);outline-offset:2px}
+/* a title phrase in the targets form (LAB-218): the words toggle it, ✕ deletes it. On has a ✓ and off is grey, hollow and
+   struck through, so they read at a glance (LAB-284); off keeps the ✓'s room so nothing moves when one is clicked */
+html[data-theme] .chip.phrase{padding:0;gap:0}
+.chip.phrase>button{background:none;border:0;cursor:pointer;padding:6px 3px 6px 13px}
+.chip.phrase>button+button{padding:6px 11px 6px 4px}
+html[data-theme=classic] .chip.phrase>button{padding:3px 3px 3px 11px}
+html[data-theme=classic] .chip.phrase>button+button{padding:3px 9px 3px 4px}
+.chip.phrase .tick{margin-right:5px}
+.chip.phrase.off .tick{visibility:hidden}
+.chip.phrase.off .words{text-decoration:line-through}
+html[data-theme] .chip.phrase.off{color:var(--ink2);background:transparent;box-shadow:inset 0 0 0 1.5px var(--hair)}
+html[data-theme] .chip.phrase.off:hover{box-shadow:inset 0 0 0 1.5px var(--ink2)}
+
+/* ================= FORMS ================= */
+input[type=text],input[type=url],input[type=email],input[type=number],input[type=date],input[type=datetime-local],input[type=search],input:not([type]),select,textarea{border:1.5px solid var(--hair);border-radius:var(--r-in);padding:8px 11px;background:var(--surface2);color:var(--ink);min-width:0;transition:border-color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease)}
+:is(input,select,textarea):hover{border-color:color-mix(in srgb,var(--ink2) 45%,var(--hair))}
+html[data-theme=index] :is(input,select,textarea){border-color:var(--ink)}
+html[data-theme=classic] :is(input,select,textarea){border-color:var(--ink);padding:7px 10px}
+html[data-theme=night] :is(input,select,textarea),html[data-theme=switch] :is(input,select,textarea){background:var(--sunk)}
+::placeholder{color:var(--ink2);opacity:.8}
+textarea{width:100%;min-height:70px;resize:vertical}
+select{max-width:100%}
+input.inline{border-color:transparent;background:transparent;padding:2px 4px}
+input.inline:hover,input.inline:focus{border-color:var(--hair);background:var(--surface2)}
+html[data-theme=index] input.inline,html[data-theme=classic] input.inline{border-color:transparent}
+input[type=checkbox],input[type=radio]{accent-color:var(--primary);width:16px;height:16px;margin:0;flex:none}
+label.row{cursor:pointer}
+
+/* ================= LISTS, TABLES ================= */
+.list{list-style:none;padding:0;margin:0}.list>li{padding:10px 0;border-bottom:1px solid var(--hair)}
+table.t{border-collapse:collapse;width:100%;font-size:13px}table.t td,table.t th{border-bottom:1px solid var(--hair);padding:8px 6px;text-align:left;vertical-align:top}
+table.t th{font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.grp{margin-bottom:22px}.grp>.head{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;padding:6px 0;border-bottom:1.5px solid var(--hair);margin-bottom:6px}
+html[data-theme=index] .grp>.head,html[data-theme=classic] .grp>.head{border-bottom-color:var(--ink)}
+.rrow{display:flex;gap:10px;align-items:center;padding:9px 8px;border-bottom:1px solid var(--hair);border-radius:calc(var(--r-in) - 2px);transition:background-color var(--dur-1) var(--ease)}
+.rrow.sel{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent),var(--shadow-soft)}
+html[data-theme=classic] .rrow.sel{background:#fff;box-shadow:inset 3px 0 0 var(--accent)}
+.rrow{flex-wrap:wrap}.rrow>.grow{flex:1 1 240px;overflow-wrap:anywhere}
+.rrow .acts{display:flex;gap:5px;flex-wrap:wrap}
+
+/* ================= TRACKER BOARD ================= */
+.board{display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));gap:12px;align-items:start;overflow-x:auto}
+.board .colh{font-weight:700;font-size:13px;margin-bottom:10px}
+html[data-theme=porch] .board .colh,html[data-theme=night] .board .colh{font:500 17px/1.25 var(--f-display)}
+html[data-theme=switch] .board .colh{font:500 11.5px/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.card{background:var(--surface);border:var(--bw) solid var(--line);border-radius:calc(var(--r) - 4px);padding:10px 12px;margin-bottom:8px;font-size:12.5px;text-decoration:none;display:block;cursor:pointer;box-shadow:var(--shadow-soft);transition:box-shadow var(--dur-2) var(--ease),transform var(--dur-2) var(--ease),background-color var(--dur-2) var(--ease)}
+.card:hover{box-shadow:var(--lift);transform:translateY(-1px)}
+html[data-theme=index] .card:hover{transform:translate(-1px,-1px)}
+html[data-theme=switch] .card:hover{transform:none;border-color:#4A5868}
+html[data-theme=classic] .card{font-size:13px;border-radius:8px;padding:9px 11px}
+html[data-theme=classic] .card:hover{background:#fff;box-shadow:none;transform:none}
+.card b{display:block;font-size:14px;font-weight:700;line-height:1.25;margin-bottom:2px}
+.card .quick{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px;cursor:default}
+.card .quick .btn{padding:3px 8px;font-size:11.5px}
+.card .quick input{font-size:12px;padding:3px 6px;min-width:0;flex:1 1 150px}
+html[data-theme=porch] .card b,html[data-theme=night] .card b{font:600 16px/1.2 var(--f-display)}
+.card.sib{border-left:5px solid var(--primary)}
+html[data-theme=porch] .card.sib,html[data-theme=night] .card.sib{border-left-color:var(--accent)}
+.card.hl{box-shadow:var(--glow)}
+.card.closed{opacity:.6}
+.card .xs{overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow-wrap:anywhere}
+/* Applied cards grouped by week */
+.wk{margin-bottom:4px}.wkh{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--hair);padding:4px 0;margin:6px 0 8px;font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);cursor:pointer}
+.wkh:hover{color:var(--ink)}
+.fname{display:inline-block;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
+.scrollx{overflow-x:auto;max-width:100%}
+
+/* ================= LAYOUT ================= */
+.split{display:grid;grid-template-columns:340px minmax(0,1fr);gap:26px;align-items:start}.split.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.split>*{min-width:0}
+@media (max-width:900px){.split,.split.two{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:820px){.board{grid-template-columns:repeat(6,220px)}}
+
+/* ================= STEP TIMELINE ================= */
+/* The step timeline scrolls inside its card when there are more steps than fit. */
+.steps{display:flex;gap:0;margin:8px 0 0;padding:4px 0 6px;overflow-x:auto;overscroll-behavior-x:contain}
+.steps>span{flex:1 0 84px;min-width:0;overflow-wrap:anywhere;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;text-align:center;position:relative}
+.steps>span::before{content:"";position:absolute;top:5px;left:-50%;right:50%;height:1.5px;background:var(--hair);z-index:0}
+.steps>span:first-child::before{display:none}
+.steps>span .x{visibility:hidden;cursor:pointer}.steps>span:hover .x{visibility:visible}
+.dot{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink2);background:var(--surface);position:relative;z-index:1;cursor:pointer;transition:background-color var(--dur-2) var(--ease),box-shadow var(--dur-3) var(--ease)}
+.dot.fill{background:var(--primary);border-color:var(--primary)}
+.dot.next{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 45%,transparent)}
+.dot.step{border-radius:3px}
+
+/* ================= MAP ================= */
+.mapwrap{position:relative;height:calc(100vh - 210px);min-height:420px;border:var(--bw) solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
+.mapwrap canvas{display:block;width:100%;height:100%;cursor:grab}
+.mapside{position:absolute;top:12px;right:12px;width:300px;max-height:calc(100% - 24px);overflow:auto;box-shadow:var(--lift)}
+.mapzoom{position:absolute;left:12px;bottom:12px;display:flex;flex-direction:column;gap:6px}
+.mapwrap .mapzoom .btn{width:34px;height:34px;padding:0;justify-content:center;font-size:18px;line-height:1;box-shadow:var(--shadow)}
+.maphint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity var(--dur-2) var(--ease-exit)}
+.maphint.on{opacity:1;transition-timing-function:var(--ease)}
+.maphint span{background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:var(--r);font-size:13.5px;box-shadow:var(--lift)}
+html[data-theme=switch] .maphint span{background:var(--surface2);color:var(--ink);box-shadow:inset 0 0 0 1px #4A5868,0 20px 40px -20px #000;font-family:var(--f-mono);font-size:12.5px}
+
+/* ================= OVERLAYS ================= */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:var(--r);z-index:100;font-size:13.5px;box-shadow:var(--lift);animation:toast-in var(--dur-2) var(--ease)}
+html[data-theme=switch] .toast{background:var(--surface2);color:var(--ink);box-shadow:inset 0 0 0 1px #4A5868,0 20px 40px -20px #000;font-family:var(--f-mono);font-size:12.5px}
+.fb{position:fixed;right:18px;bottom:18px;z-index:30;box-shadow:var(--lift)}
+html[data-theme=classic] .fb{box-shadow:none}
+.modal{position:fixed;inset:0;background:var(--scrim);display:flex;align-items:center;justify-content:center;z-index:50;padding:20px;animation:fade var(--dur-2) var(--ease)}
+.modal>div{background:var(--surface);border:var(--bw) solid var(--line);border-radius:calc(var(--r) + 4px);padding:22px;max-width:520px;width:100%;max-height:90vh;overflow:auto;box-shadow:var(--lift);animation:rise var(--dur-3) var(--ease)}
+html[data-theme=classic] .modal>div{background:var(--bg);border-width:2px;border-radius:12px;padding:20px}
+
+/* Each screen settles in as it mounts (its loading line, then its content). */
+.page>*{animation:rise var(--dur-2) var(--ease)}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(var(--enter-y))}}
+@keyframes pop{from{opacity:0;transform:scale(.97) translateY(-4px)}}
+@keyframes toast-in{from{opacity:0;transform:translate(-50%,8px)}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:1ms!important;transition-property:opacity,color,background-color,border-color,box-shadow!important}
+  .card:hover,.btn:active{transform:none}
+}
+
+/* ================= NARROW ================= */
+@media (max-width:900px){.top .tab{padding:6px 9px}.brand{margin-right:8px}}
+@media (max-width:700px){
+  .wide{display:none!important}.narrow{display:inline-flex!important}
+  .app{padding:0 12px 80px}.banner{padding:6px 12px}
+  .top{flex-wrap:nowrap;gap:2px;padding:10px 0;margin-bottom:16px}
+  .brand{margin-right:6px}.brand span{display:none}
+  .top>.tab,.top .right>.tab{padding:6px 9px}
+  .fb{display:none}
+  h1{font-size:30px}
+  html[data-theme=switch] h1{font-size:24px}
+  html[data-theme=classic] h1{font-size:26px}
+  .item{padding:12px 14px}
+  .item .acts{justify-content:flex-start}
+  /* Stages: one column at a time, swipe sideways, each column snaps into place */
+  .board{grid-template-columns:repeat(6,86%);scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding-bottom:6px}
+  .board>div{scroll-snap-align:start}
+}
+
+/* ================= SETUP (LAB-299) ================= */
+/* The first run in four steps (src/pages/Setup.tsx), from design/onboarding round 3, direction A: Porch Light with the
+   lamp on. The step rail is string lights: a lamp lit for each step done, the current one breathing. Everything reads
+   the theme tokens, so setup looks like the app it opens into in every theme. */
+.setup{max-width:1060px;margin:0 auto;padding:6px 0 60px}
+.setup-top{display:flex;align-items:center;gap:18px;padding:14px 0 26px;flex-wrap:wrap}
+.setup-top .brand{margin-right:0}
+.setup-aside{margin-left:auto;display:flex;align-items:center;gap:14px}
+.link-btn{background:none;border:0;padding:0;font:inherit;font-size:13px;color:var(--ink2);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 70%,transparent);text-underline-offset:3px;cursor:pointer}
+.link-btn:hover{color:var(--ink)}
+.rail{list-style:none;margin:0 auto;padding:0;display:flex;align-items:flex-start}
+.rail li{display:flex;align-items:flex-start}
+.rail button{background:none;border:0;padding:2px 0;display:flex;flex-direction:column;align-items:center;gap:8px;width:104px;font-size:12.5px;color:var(--ink2);cursor:pointer;border-radius:var(--r-in)}
+.rail button:disabled{cursor:default}
+.rail .now button{color:var(--ink);font-weight:700}
+.rail .lbl{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;line-height:1.2}
+.rail em{font:italic 400 12.5px/1 var(--f-display);color:var(--accent-ink)}
+.lamp{width:17px;height:17px;border-radius:50%;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--hair);display:grid;place-items:center;transition:background-color var(--dur-3) var(--ease),box-shadow var(--dur-3) var(--ease)}
+.lamp svg,.ck .dot svg{width:11px;height:11px;fill:none;stroke:var(--lit-ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.rail .done .lamp{background:var(--accent);box-shadow:var(--glow)}
+.rail .now .lamp,.ck.now .dot{background:var(--lit-face);animation:breathe 3.2s ease-in-out infinite}
+@keyframes breathe{0%,100%{box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 35%,transparent),0 0 10px 3px color-mix(in srgb,var(--accent) 30%,transparent)}
+  50%{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 55%,transparent),0 0 26px 10px color-mix(in srgb,var(--accent) 62%,transparent)}}
+/* The string between two lamps, lit once the step before it is done */
+.rail .sep{width:34px;height:2px;margin:10px -24px 0;background:var(--hair);border-radius:2px;overflow:hidden;flex:none}
+.rail .sep i{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-3) var(--ease)}
+.rail .done .sep i{transform:scaleX(1)}
+.errand{display:inline-flex;align-items:center;gap:6px;font:600 12px/1 var(--f-body);padding:7px 11px;border-radius:999px;border:1.5px dashed var(--accent);background:var(--hold-bg);color:var(--hold-ink);cursor:pointer;white-space:nowrap}
+.errand.late{border-style:solid}
+.mono,.mono-num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.setup-step{animation:rise var(--dur-3) var(--ease)}
+.setup .eyebrow{font:italic 400 16px/1.3 var(--f-display);color:var(--accent-ink);margin-bottom:2px}
+.setup h1{font-size:clamp(30px,4.2vw,46px);margin:2px 0 10px}
+.setup .lede{font-size:15.5px;color:var(--ink2);max-width:64ch;margin:0 0 6px}
+.setup-two{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px;align-items:start;margin:18px 0}
+.setup-foot{display:flex;gap:10px 16px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid var(--hair)}
+.setup-foot .btn{font-size:14px;padding:9px 18px}
+.stepl{list-style:none;margin:0;padding:6px 18px}
+.stepl li{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--hair)}
+.stepl li:first-child{border-top:0}
+.stepl .num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--sunk);display:grid;place-items:center;font:600 13px var(--f-mono);color:var(--ink2)}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice{display:flex;flex-direction:column;gap:3px;border-radius:calc(var(--r) - 4px);box-shadow:inset 0 0 0 1.5px var(--hair);padding:10px 12px;font-size:13px}
+.ticks{list-style:none;margin:2px 0 0;padding:0}
+.ticks li{margin:3px 0}
+.ticks li::before{content:"✓ ";color:var(--accent-ink);font-weight:700}
+.answer{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--surface);border:0;border-radius:calc(var(--r) - 4px);box-shadow:inset 0 0 0 1.5px var(--hair);padding:11px 14px;cursor:pointer;transition:box-shadow var(--dur-1) var(--ease),background-color var(--dur-1) var(--ease)}
+.answer:hover{box-shadow:inset 0 0 0 1.5px var(--ink2)}
+.answer.on{background:var(--hold-bg);color:var(--hold-ink);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.checklist{padding:4px 18px}
+.ck{display:flex;gap:12px;align-items:center;padding:15px 0;border-top:1px solid var(--hair);flex-wrap:wrap}
+.ck:first-child{border-top:0}
+.ck .dot{width:20px;height:20px;border-radius:50%;flex:none;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--hair);display:grid;place-items:center}
+.ck.done .dot{background:var(--accent);box-shadow:var(--glow)}
+.ck.bad .dot{background:var(--rej-bg);box-shadow:inset 0 0 0 1.5px var(--rej-ink)}
+/* The wait's one dark panel: the porch at dusk (ink on paper, so it inverts in the dark themes) */
+.dusk{background:var(--ink);color:var(--bg);border-radius:calc(var(--r) + 4px);padding:24px;box-shadow:var(--lift);gap:12px}
+.dusk .big{font:italic 500 56px/1 var(--f-display);letter-spacing:var(--d-track);font-variant-numeric:lining-nums}
+.dusk .big em{font-size:22px;font-style:italic;opacity:.8}
+.dusk .sm{color:color-mix(in srgb,var(--bg) 78%,var(--ink))}
+.dusk b{color:var(--bg)}
+.use-wait{margin-top:14px}
+@media (max-width:820px){.setup-two{grid-template-columns:minmax(0,1fr)}.rail{margin:0}.setup-aside{margin-left:0}}
+@media (max-width:640px){
+  .setup-top{gap:10px}
+  .rail{order:3;width:100%;justify-content:space-between}
+  .rail button{width:auto;min-width:22px}
+  .rail .lbl{display:none} /* "Step 2 of 4" under it says where they are */
+  .setup-foot>.xs{order:-1;flex-basis:100%;text-align:left!important}
+  .rail .sep{width:auto;flex:1;margin:10px 6px 0}
+  .rail li{flex:1;align-items:flex-start}.rail li:last-child{flex:none}
+  .choices{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.rail .now .lamp,.ck.now .dot{animation:none;box-shadow:var(--glow)}}
+/* Setup step 2 (frame 55): the form, and the live count beside it */
+.targets-setup{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px;align-items:start}
+.targets-setup .count{position:sticky;top:18px}
+.targets-foot{grid-column:1/-1}
+.targets-foot .setup-foot{margin-top:6px}
+.fold{border-top:1px solid var(--hair);padding-top:10px}
+.fold>summary{cursor:pointer;list-style:none;display:flex;gap:8px;align-items:baseline}
+.fold>summary::before{content:"▸";color:var(--ink2);font-size:11px;transition:transform var(--dur-1) var(--ease)}
+.fold[open]>summary::before{transform:rotate(90deg)}
+.fold>summary::-webkit-details-marker{display:none}
+.fold[open]>summary{margin-bottom:10px}
+.dusk .eyebrow-dusk{font:600 11px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.dusk .faint{opacity:.7}
+.dusk.count .big{font-style:normal;font-variant-numeric:tabular-nums}
+.dusk .chip{color:var(--bg);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--bg) 35%,transparent)}
+.dusk .chip:hover{box-shadow:inset 0 0 0 1.5px var(--bg)}
+.dusk .muted{color:inherit;opacity:.7}
+@media (max-width:820px){.targets-setup{grid-template-columns:minmax(0,1fr)}.targets-setup .count{position:static}}
+/* Setup step 3 (frames 56-58): the whole panel takes the drop */
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:250px;text-align:center;cursor:pointer;
+  background:var(--surface);border:1.5px dashed color-mix(in srgb,var(--accent) 45%,var(--hair));border-radius:calc(var(--r) + 6px);padding:28px;
+  transition:background-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease),transform var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease)}
+.drop:hover{border-color:var(--accent)}
+.drop.over{background:var(--hold-bg);border-color:var(--accent);border-style:solid;box-shadow:var(--lift);transform:translateY(-2px)}
+.drop b{font:500 24px/1.2 var(--f-display);letter-spacing:var(--d-track)}
+.drop-file{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:24px;background:var(--lit-face);color:var(--lit-ink);box-shadow:var(--glow)}
+.fold-box>summary{cursor:pointer;list-style:none}
+.fold-box>summary::-webkit-details-marker{display:none}
+.fold-box>summary::before{content:"▸ ";color:var(--ink2);font-size:11px}
+.fold-box[open]>summary::before{content:"▾ "}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
+.tile{background:var(--surface);border-radius:calc(var(--r) - 4px);box-shadow:var(--shadow-soft);padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.tile b{font:500 30px/1.05 var(--f-display);letter-spacing:var(--d-track);font-variant-numeric:tabular-nums lining-nums}
+.tile span{font-size:12.5px;color:var(--ink2)}
+/* Setup step 4 (frames 59-61): your numbers, where your people work, and match cards with the best way in */
+.found-tiles{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin-top:14px}
+.found-tiles .tile{animation:rise var(--dur-3) var(--ease) both}
+.bars{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.bar{display:flex;align-items:center;gap:10px;position:relative;padding-bottom:9px;font-size:14px}
+.bar i{position:absolute;left:0;bottom:0;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--primary),color-mix(in srgb,var(--primary) 60%,var(--accent)));
+  width:var(--w);transform-origin:left;animation:grow var(--dur-3) var(--ease) both;animation-delay:calc(var(--i) * 60ms)}
+@keyframes grow{from{transform:scaleX(0)}}
+.mcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin:18px 0}
+.mcard{display:flex;flex-direction:column;gap:10px;animation:rise var(--dur-3) var(--ease) both;animation-delay:calc(var(--i) * 60ms)}
+.mcard h2{font-size:21px}
+.wayin{background:var(--hold-bg);color:var(--hold-ink);border-radius:calc(var(--r) - 4px);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.wayin .eyebrow{font:italic 400 14px/1.2 var(--f-display);color:inherit;margin:0}
+.wayin .muted{color:inherit;opacity:.8}
+.av{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;font:700 12px var(--f-body);background:var(--lit-face);color:var(--lit-ink);box-shadow:var(--glow)}
+/* Back in the app with setup unfinished (frame 63) */
+.welcome-back{margin:18px 0 6px;gap:8px;box-shadow:0 0 0 1.5px color-mix(in srgb,var(--accent) 55%,transparent),var(--shadow)}
+.top .errand{margin-right:4px}
+.rail .skipped .lamp{box-shadow:inset 0 0 0 1.5px var(--accent)}
+.rail .skipped .sep i{transform:scaleX(1)}
+/* Start with your AI (LAB-353): connected once the assistant has used the link; setup's first screen and its way out. */
+.box.connected{background:var(--ok-bg);color:var(--ok-ink);border-color:transparent}
+.ai-first{display:flex;flex-direction:column;gap:14px}
+.ai-first .ai-progress{gap:4px}
+.ai-first .ai-progress li{list-style:none}
+.ai-first .ai-progress li.on{color:var(--ok-ink)}
+.ai-first .or-here{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+/* Hiring for you, where you don't know anyone yet (LAB-378): after the warm items, with plainer rows than theirs: no
+   amber, and a dashed ring where a warm role has a filled dot. */
+.pool{margin-top:22px;gap:8px}
+.pool .job{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--hair)}
+.pool .ring{width:12px;height:12px;border-radius:50%;border:1.5px dashed var(--ink2);opacity:.75}
+.pool .job b{display:block;font-weight:650;font-size:14.5px;overflow-wrap:anywhere}
+.pool .acts{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.pool .tag.fit{background:var(--ok-bg);color:var(--ok-ink);box-shadow:none}
+.pool .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid var(--hair);padding-top:10px}
+@media (max-width:560px){.pool .job{grid-template-columns:14px 1fr}.pool .acts{grid-column:2;justify-content:flex-start}}

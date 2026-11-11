@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-theme="porch">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask LinkedIn for your connections · Anyone I Know</title>
+<meta name="description" content="Request a copy of your LinkedIn connections so Anyone I Know can show you who you know at companies that are hiring.">
+<meta name="theme-color" content="#f3eee5">
+<link rel="preload" href="ds/aik/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="ds/aik/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="ds/aik/tokens.css">
+<link rel="stylesheet" href="ds/aik/components/bundle.css">
+<link rel="stylesheet" href="css/linkedin-export.css">
+<script src="js/linkedin-export.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the steps</a>
+<div class="shell">
+  <div class="setup setup-step">
+    <header class="setup-top">
+      <a class="brand" href="welcome.html"><i></i><span>Anyone I Know</span></a>
+      <div class="setup-aside">
+        <a class="link-btn" href="welcome.html">Finish later</a>
+      </div>
+    </header>
+
+    <nav class="box rail-box" aria-label="Setup progress">
+      <ol class="rail">
+        <li class="done"><span class="stop"><span class="lamp"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.2 2.2L9.5 3.8"/></svg></span><span class="lbl">Your role<span class="sr-only">, done</span></span></span><span class="sep"><i></i></span></li>
+        <li class="now" aria-current="step"><span class="stop"><span class="lamp"></span><span class="lbl">Your contacts</span></span><span class="sep"><i></i></span></li>
+        <li><span class="stop"><span class="lamp"></span><span class="lbl">More people</span></span><span class="sep"><i></i></span></li>
+        <li><span class="stop"><span class="lamp"></span><span class="lbl">Tour</span></span></li>
+      </ol>
+    </nav>
+
+    <main id="main">
+      <h1>First, ask LinkedIn for your connections</h1>
+      <p class="lede">LinkedIn doesn't let apps read your network directly, so you'll request a copy yourself. It's free, official, and only takes a few clicks. LinkedIn opens in a new tab. Keep this one open and we'll be right here.</p>
+      <ul class="facts" aria-label="What to expect">
+        <li class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>On a computer</li>
+        <li class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About 2 minutes</li>
+        <li class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Arrives by email</li>
+      </ul>
+
+      <div class="setup-two">
+        <section class="box path-box" aria-label="Steps on LinkedIn">
+          <ol class="stepl path">
+            <li class="now" id="step-open">
+              <span class="num" aria-hidden="true">1</span>
+              <div class="step-body">
+                <h2>Open LinkedIn's "Download your data" page</h2>
+                <p>Use the button, it goes straight there. Or find it yourself on linkedin.com:</p>
+                <ol class="crumbs" aria-label="Menu path on LinkedIn">
+                  <li><span class="tag fill">Me</span></li>
+                  <li><span class="tag fill">Settings &amp; Privacy</span></li>
+                  <li><span class="tag fill">Data privacy</span></li>
+                  <li><span class="tag warm">Download your data</span></li>
+                </ol>
+                <div class="row wrap open-row">
+                  <a class="btn solid" id="open-linkedin" href="https://www.linkedin.com/mypreferences/d/download-my-data" target="_blank" rel="noopener">
+                    <span data-label>Open LinkedIn download page</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>
+                  </a>
+                  <span class="hint" id="open-hint">Opens in a new tab · sign in to LinkedIn if asked</span>
+                </div>
+              </div>
+            </li>
+
+            <li id="step-pick">
+              <span class="num" aria-hidden="true">2</span>
+              <div class="step-body step-split">
+                <div class="step-text">
+                  <h2>Pick "Connections" only, then Request archive</h2>
+                  <p>Choose the option to select specific files and tick <strong>Connections</strong>. Skip the full archive: it can take up to a day to arrive.</p>
+                </div>
+                <figure class="li-mock">
+                  <div class="pane" role="img" aria-label="LinkedIn's export form with Select specific files chosen, Connections ticked, and the Request archive button below">
+                    <span class="opt off">Full archive (slower)</span>
+                    <span class="opt on">Select specific files</span>
+                    <span class="files">
+                      <span class="tag pick"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.2 2.2L9.5 3.8"/></svg>Connections</span>
+                      <span class="tag faint">Messages</span>
+                      <span class="tag faint">Invitations</span>
+                      <span class="tag faint">and more</span>
+                    </span>
+                    <span class="mock-btn">Request archive</span>
+                  </div>
+                  <figcaption class="hint">What to choose on LinkedIn's page</figcaption>
+                </figure>
+              </div>
+            </li>
+
+            <li id="step-email">
+              <span class="num" aria-hidden="true">3</span>
+              <div class="step-body">
+                <h2>Watch your email for the download link</h2>
+                <p>LinkedIn usually emails it within minutes (it can take longer). Download the ZIP and drop it here as it is, no need to unzip. The file inside that we read is <code>Connections.csv</code>.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <aside class="col side" aria-label="About this step">
+          <section class="dusk col">
+            <h2>Why this way?</h2>
+            <p class="sm">LinkedIn only lets approved partners read connections through its API. Your own export is the official route. You choose what to share, and you can delete it from Anyone I Know at any time.</p>
+            <ul class="why">
+              <li><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.2 2.2L9.5 3.8"/></svg>Names, companies and titles only</li>
+              <li><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.2 2.2L9.5 3.8"/></svg>No messages, no password</li>
+              <li><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.2 2.2L9.5 3.8"/></svg>We never contact anyone for you</li>
+            </ul>
+          </section>
+          <section class="box col phone">
+            <h2 class="type-column-head">On your phone right now?</h2>
+            <p class="sm muted">The export is easiest on a computer. Send yourself these steps with the direct link.</p>
+            <a class="btn ghost" href="mailto:?subject=Get%20my%20LinkedIn%20connections%20for%20Anyone%20I%20Know&amp;body=On%20a%20computer%3A%0A%0A1.%20Open%20https%3A%2F%2Fwww.linkedin.com%2Fmypreferences%2Fd%2Fdownload-my-data%0A2.%20Choose%20%22Select%20specific%20files%22%2C%20tick%20Connections%20only%2C%20then%20Request%20archive.%0A3.%20Watch%20your%20email%20for%20LinkedIn%27s%20download%20link%20and%20download%20the%20ZIP.%0A4.%20Drop%20the%20ZIP%20into%20Anyone%20I%20Know%2C%20no%20need%20to%20unzip.">Email me these steps</a>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="setup-foot">
+      <a class="btn" href="contacts.html">Back</a>
+      <span class="xs muted">Step 2 of 4</span>
+      <div class="row wrap foot-next">
+        <a class="link-btn" href="contacts.html">I already have the file</a>
+        <a class="btn solid" href="waiting.html">I've requested it
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </footer>
+    <p class="sr-only" role="status" id="status"></p>
+  </div>
+</div>
+</body>
+</html>
